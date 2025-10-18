@@ -1,3 +1,13 @@
 
+<div class="buda-background">
+  <img *ngIf="showAnimated" src="assets/images/buda.gif">
+  <img *ngIf="!showAnimated" src="assets/images/buda-static.png">
+</div>
+
+<div class="content">
+  <!-- Aquí irán los componentes: header, productos, imágenes, videos -->
+</div>
+
+<!--<footer-component></footer-component>-->
 
 <router-outlet />
