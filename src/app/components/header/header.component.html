@@ -1,0 +1,11 @@
+<header>
+  <nav class="menu">
+     <span>Productos</span>
+    <span (click)="toggleGallery()">Galería</span>
+    <div *ngIf="showGallery" class="submenu">
+      <span>Fotos</span>
+      <span>Vídeos</span>
+    </div>
+    <span>Horarios</span>
+  </nav>
+</header>

@@ -1,12 +1,24 @@
 
+<app-header></app-header>
 <div class="buda-background">
-  <img *ngIf="showAnimated" src="assets/images/buda.gif">
-  <img *ngIf="!showAnimated" src="assets/images/buda-static.png">
+  <video 
+    *ngIf="showAnimated"
+    src="assets/video/code.mp4"
+    autoplay
+    muted
+    playsinline
+    (ended)="onVideoEnd()">
+  </video>
+
+  <img *ngIf="!showAnimated" src="assets/images/buda.png" alt="Buda">
 </div>
 
 <div class="content">
-  <!-- Aquí irán los componentes: header, productos, imágenes, videos -->
+  <!-- Aquí irán tus componentes -->
 </div>
+
+
+
 
 <!--<footer-component></footer-component>-->
 
