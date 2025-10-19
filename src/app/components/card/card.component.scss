@@ -1,0 +1,125 @@
+.card-container {
+  position: relative;
+  width: 160px;
+  height: 230px;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.85);
+  overflow: visible;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+/* Escalado al pasar el ratón */
+.card-container:hover {
+  transform: translateY(-4px) scale(1.05);
+}
+
+/* Borde neón blanco animado */
+.card-container::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 20px;
+  background: linear-gradient(
+    270deg,
+    #ffffff,
+    #eeeeff,
+    #ffffff,
+    #eeeeff,
+    #ffffff
+  );
+  background-size: 400% 400%;
+  animation: neonFlow 4s linear infinite, flicker 2s infinite alternate;
+  filter: drop-shadow(0 0 6px #fff) drop-shadow(0 0 12px #fff);
+  z-index: 0;
+  pointer-events: none;
+  transition: filter 0.3s ease;
+}
+
+/* Intensificación del halo al hover */
+.card-container:hover::before {
+  filter: drop-shadow(0 0 12px #fff) 
+          drop-shadow(0 0 25px #fff) 
+          drop-shadow(0 0 35px #fff);
+}
+
+/* Borde interno (opcional, sutil) */
+.card-container::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Animaciones */
+@keyframes neonFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 400% 50%; }
+}
+
+/* Efecto de parpadeo ligero */
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+  }
+  20%, 22%, 24%, 55% {
+    opacity: 0.6;
+  }
+}
+
+/* Contenido de la tarjeta */
+.main-card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+}
+
+/* Texto */
+.scrollbar-glass {
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: #ffffffcc;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+.description {
+  font-size: 0.85rem;
+  opacity: 0.85;
+  color: #ffffffcc;
+}
+
+/* Separación de tarjetas */
+.cards-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 4rem; /* separación clara */
+  flex-wrap: wrap;
+  margin-top: 8rem;
+}

@@ -9,6 +9,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss'] 
 })
 export class HeaderComponent {
+
+  
+  
   showGallery = false; // <--- declaración de la variable
 
   toggleGallery() {

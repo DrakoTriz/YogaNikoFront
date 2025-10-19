@@ -8,23 +8,34 @@
   z-index: 0;
 }
 
-.buda-background video {
+.buda-background video,
+.buda-background img {
   position: absolute;
   top: 50%;
   left: 50%;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* llena todo sin deformarse */
+  object-fit: cover; /* llena todo el viewport sin espacios laterales */
   transform: translate(-50%, -50%);
-}
-
-.buda-background img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 .content {
   position: relative;
   z-index: 1;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 0; /* header ya está arriba */
+}
+
+/* Cards wrapper ejemplo */
+.cards-wrapper {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.buda-background {
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease-out;
 }

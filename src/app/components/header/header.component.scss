@@ -16,6 +16,13 @@ header {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
   z-index: 9999;
 }
+:host {
+  display: block;
+  cursor: pointer;
+  padding-top: 120px; /* espacio suficiente para el header fijo */
+  background-color: #000;
+  min-height: 100vh;
+}
 
 .logo {
   font-size: 2rem;

@@ -26,3 +26,16 @@
   text-align: center;
   margin-top: 250px;
 }
+:host {
+  display: block;
+  background-color: #000;
+  min-height: 100vh;
+  padding-top: 6rem;
+}
+
+.cards-wrapper {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}

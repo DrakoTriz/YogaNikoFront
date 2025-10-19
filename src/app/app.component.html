@@ -1,25 +1,24 @@
+<app-header *ngIf="showContent"></app-header>
 
-<app-header></app-header>
-<div class="buda-background">
+<div class="buda-background"[style.transform]="
+   'rotateX(' + (mouseY * 8) + 'deg) rotateY(' + (mouseX * 8) + 'deg) scale(1.05)'
+">
+  <!-- Video de marca inicial -->
   <video 
     *ngIf="showAnimated"
     src="assets/video/code.mp4"
     autoplay
     muted
     playsinline
-    (ended)="onVideoEnd()">
-  </video>
+    (ended)="onVideoEnd()"
+  ></video>
 
+  <!-- Imagen de fondo (fallback después del video) -->
   <img *ngIf="!showAnimated" src="assets/images/buda.png" alt="Buda">
 </div>
 
-<div class="content">
-  <!-- Aquí irán tus componentes -->
+<div class="content" *ngIf="showContent">
+  <!-- Aquí van tus componentes de la web -->
 </div>
 
-
-
-
-<!--<footer-component></footer-component>-->
-
-<router-outlet />
+<router-outlet *ngIf="showContent"></router-outlet>
